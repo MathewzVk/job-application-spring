@@ -1,6 +1,7 @@
 package com.mathewzvk.firstjobapp.job.model;
 
 
+import com.mathewzvk.firstjobapp.company.entity.Company;
 import jakarta.persistence.Column;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -17,4 +18,5 @@ public class JobRequest {
     private String minSalary;
     private String maxSalary;
     private String location;
+    private Company company;
 }

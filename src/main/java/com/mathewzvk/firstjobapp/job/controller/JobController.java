@@ -35,10 +35,10 @@ public class JobController {
         return jobService.findJobById(id);
     }
 
-    @PutMapping
+    @PutMapping("/{id}")
     @ResponseStatus(HttpStatus.OK)
-    public Job update(@RequestBody Job job){
-        return jobService.updateJob(job);
+    public Job update(@PathVariable Long id, @RequestBody JobRequest jobRequest){
+        return jobService.updateJob(id, jobRequest);
     }
 
     @DeleteMapping("/{id}")

@@ -1,5 +1,6 @@
 package com.mathewzvk.firstjobapp.job.entity;
 
+import com.mathewzvk.firstjobapp.company.entity.Company;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -29,5 +30,8 @@ public class Job {
     private String maxSalary;
 
     private String location;
+
+    @ManyToOne
+    private Company company;
 
 }

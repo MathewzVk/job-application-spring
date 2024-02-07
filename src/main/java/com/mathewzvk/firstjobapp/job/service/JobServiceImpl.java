@@ -30,6 +30,7 @@ public class JobServiceImpl implements JobService{
                 .minSalary(jobRequest.getMinSalary())
                 .maxSalary(jobRequest.getMaxSalary())
                 .location(jobRequest.getLocation())
+                .company(jobRequest.getCompany())
                 .build();
         jobRepository.save(job);
     }
@@ -40,19 +41,20 @@ public class JobServiceImpl implements JobService{
     }
 
     @Override
-    public Job updateJob(Job job) {
-        Optional<Job> oldJobOptional = jobRepository.findById(job.getId());
+    public Job updateJob(Long id, JobRequest jobRequest) {
+        Optional<Job> oldJobOptional = jobRepository.findById(id);
         if(oldJobOptional.isPresent()){
             Job oldJob = oldJobOptional.get();
 
-            oldJob.setTitle(job.getTitle());
-            oldJob.setDescription(job.getDescription());
-            oldJob.setMinSalary(job.getMinSalary());
-            oldJob.setMaxSalary(job.getMaxSalary());
-            oldJob.setLocation(job.getLocation());
+            oldJob.setTitle(jobRequest.getTitle());
+            oldJob.setDescription(jobRequest.getDescription());
+            oldJob.setMinSalary(jobRequest.getMinSalary());
+            oldJob.setMaxSalary(jobRequest.getMaxSalary());
+            oldJob.setLocation(jobRequest.getLocation());
+            oldJob.setCompany(jobRequest.getCompany());
             return jobRepository.save(oldJob);
         }else {
-            throw new NoSuchElementException("Job with ID " + job.getId() + " not found");
+            throw new NoSuchElementException("Job with ID " + id + " not found");
         }
     }
 

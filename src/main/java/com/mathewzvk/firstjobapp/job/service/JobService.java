@@ -12,7 +12,7 @@ public interface JobService {
 
     Job findJobById(Long id);
 
-    Job updateJob(Job job);
+    Job updateJob(Long id, JobRequest jobRequest);
 
     void deleteJob(Long id);
 }
