@@ -2,6 +2,7 @@ package com.mathewzvk.firstjobapp.company.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.mathewzvk.firstjobapp.job.entity.Job;
+import com.mathewzvk.firstjobapp.review.entity.Review;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -30,4 +31,7 @@ public class Company {
     @OneToMany(mappedBy = "company", cascade = CascadeType.ALL)
     private List<Job> jobs;
 
+    @JsonIgnore
+    @OneToMany(mappedBy = "company", cascade = CascadeType.ALL)
+    private List<Review> reviews;
 }
