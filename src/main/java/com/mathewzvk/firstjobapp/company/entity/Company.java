@@ -27,11 +27,10 @@ public class Company {
 
     private String description;
 
-    @JsonIgnore
     @OneToMany(mappedBy = "company", cascade = CascadeType.ALL)
     private List<Job> jobs;
 
-    @JsonIgnore
+
     @OneToMany(mappedBy = "company", cascade = CascadeType.ALL)
     private List<Review> reviews;
 }

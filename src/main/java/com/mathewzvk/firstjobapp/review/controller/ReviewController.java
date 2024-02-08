@@ -2,6 +2,7 @@ package com.mathewzvk.firstjobapp.review.controller;
 
 
 import com.mathewzvk.firstjobapp.review.entity.Review;
+import com.mathewzvk.firstjobapp.review.model.ReviewRequest;
 import com.mathewzvk.firstjobapp.review.service.ReviewService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -21,6 +22,14 @@ public class ReviewController {
     public List<Review> findAll(@PathVariable Long companyId){
         return reviewService.findAll(companyId);
     }
+
+    @PostMapping
+    @ResponseStatus(HttpStatus.CREATED)
+    public String createReview(@PathVariable Long companyId, @RequestBody ReviewRequest reviewRequest){
+        return reviewService.createReview(companyId, reviewRequest);
+    }
+
+
 
 
 }

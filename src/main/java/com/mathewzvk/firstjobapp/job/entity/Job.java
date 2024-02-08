@@ -1,5 +1,6 @@
 package com.mathewzvk.firstjobapp.job.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.mathewzvk.firstjobapp.company.entity.Company;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -31,6 +32,7 @@ public class Job {
 
     private String location;
 
+    @JsonIgnore
     @ManyToOne
     private Company company;
 

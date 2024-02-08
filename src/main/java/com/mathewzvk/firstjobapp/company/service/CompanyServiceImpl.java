@@ -41,6 +41,7 @@ public class CompanyServiceImpl implements CompanyService{
             company.setName(companyRequest.getName());
             company.setDescription(companyRequest.getDescription());
             company.setJobs(companyRequest.getJobs());
+            company.setReviews(companyRequest.getReviews());
             companyRepository.save(company);
             return mapToCompanyResponse(company);
         }else {
@@ -76,6 +77,8 @@ public class CompanyServiceImpl implements CompanyService{
                 .id(company.getId())
                 .name(company.getName())
                 .description(company.getDescription())
+                .jobs(company.getJobs())
+                .reviews(company.getReviews())
                 .build();
     }
 }
