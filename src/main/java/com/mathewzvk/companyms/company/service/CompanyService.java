@@ -1,8 +1,10 @@
 package com.mathewzvk.companyms.company.service;
 
-import com.mathewzvk.firstjobapp.company.entity.Company;
-import com.mathewzvk.firstjobapp.company.model.CompanyRequest;
-import com.mathewzvk.firstjobapp.company.model.CompanyResponse;
+
+
+import com.mathewzvk.companyms.company.entity.Company;
+import com.mathewzvk.companyms.company.model.CompanyRequest;
+import com.mathewzvk.companyms.company.model.CompanyResponse;
 
 import java.util.List;
 

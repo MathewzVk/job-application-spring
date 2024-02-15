@@ -1,9 +1,10 @@
 package com.mathewzvk.companyms.company.controller;
 
-import com.mathewzvk.firstjobapp.company.entity.Company;
-import com.mathewzvk.firstjobapp.company.model.CompanyRequest;
-import com.mathewzvk.firstjobapp.company.model.CompanyResponse;
-import com.mathewzvk.firstjobapp.company.service.CompanyService;
+
+import com.mathewzvk.companyms.company.entity.Company;
+import com.mathewzvk.companyms.company.model.CompanyRequest;
+import com.mathewzvk.companyms.company.model.CompanyResponse;
+import com.mathewzvk.companyms.company.service.CompanyService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;

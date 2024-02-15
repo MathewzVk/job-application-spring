@@ -1,7 +1,6 @@
 package com.mathewzvk.companyms.company.entity;
 
-import com.mathewzvk.firstjobapp.job.entity.Job;
-import com.mathewzvk.firstjobapp.review.entity.Review;
+
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -26,10 +25,5 @@ public class Company {
 
     private String description;
 
-    @OneToMany(mappedBy = "company", cascade = CascadeType.ALL)
-    private List<Job> jobs;
 
-
-    @OneToMany(mappedBy = "company", cascade = CascadeType.ALL)
-    private List<Review> reviews;
 }
