@@ -5,6 +5,9 @@
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/jobms/pom.xml" />
+        <option value="$PROJECT_DIR$/reviewms/pom.xml" />
+        <option value="$PROJECT_DIR$/companyms/pom.xml" />
       </list>
     </option>
     <option name="workspaceImportForciblyTurnedOn" value="true" />
