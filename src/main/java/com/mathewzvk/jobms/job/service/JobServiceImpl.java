@@ -1,15 +1,20 @@
 package com.mathewzvk.jobms.job.service;
 
 
+import com.mathewzvk.jobms.job.dto.JobWithCompanyDTO;
 import com.mathewzvk.jobms.job.entity.Job;
+import com.mathewzvk.jobms.job.external.Company;
 import com.mathewzvk.jobms.job.model.JobRequest;
 import com.mathewzvk.jobms.job.repository.JobRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
@@ -19,8 +24,23 @@ public class JobServiceImpl implements JobService{
     private final JobRepository jobRepository;
 
     @Override
-    public List<Job> findAllJobs() {
-        return jobRepository.findAll();
+    public List<JobWithCompanyDTO> findAllJobs() {
+        List<Job> jobList = jobRepository.findAll();
+        List<JobWithCompanyDTO> jobWithCompanyDTOList = new ArrayList<>();
+        return jobList.stream().map(this::mapToJobWithCompanyDTO).collect(Collectors.toList());
+   }
+
+    private JobWithCompanyDTO mapToJobWithCompanyDTO(Job job) {
+        RestTemplate restTemplate = new RestTemplate();
+        Company company = restTemplate.getForObject("http://localhost:8081/api/companies/" + job.getCompanyId(), Company.class);
+        if(company != null) {
+            return JobWithCompanyDTO.builder()
+                    .job(job)
+                    .company(company)
+                    .build();
+        }else {
+            throw new NoSuchElementException("No Company related to Job With ID : " + job.getId());
+        }
     }
 
     @Override

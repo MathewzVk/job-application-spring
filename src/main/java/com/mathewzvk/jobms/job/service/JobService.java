@@ -2,13 +2,14 @@ package com.mathewzvk.jobms.job.service;
 
 
 
+import com.mathewzvk.jobms.job.dto.JobWithCompanyDTO;
 import com.mathewzvk.jobms.job.entity.Job;
 import com.mathewzvk.jobms.job.model.JobRequest;
 
 import java.util.List;
 
 public interface JobService {
-    public List<Job> findAllJobs();
+    public List<JobWithCompanyDTO> findAllJobs();
 
     void addJob(JobRequest jobRequest);
 

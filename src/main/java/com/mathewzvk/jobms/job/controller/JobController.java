@@ -2,6 +2,7 @@ package com.mathewzvk.jobms.job.controller;
 
 
 
+import com.mathewzvk.jobms.job.dto.JobWithCompanyDTO;
 import com.mathewzvk.jobms.job.entity.Job;
 import com.mathewzvk.jobms.job.model.JobRequest;
 import com.mathewzvk.jobms.job.service.JobService;
@@ -21,7 +22,7 @@ public class JobController {
     private final JobService jobService;
 
     @GetMapping
-    public List<Job> findAll(){
+    public List<JobWithCompanyDTO> findAll(){
         return jobService.findAllJobs();
     }
 
