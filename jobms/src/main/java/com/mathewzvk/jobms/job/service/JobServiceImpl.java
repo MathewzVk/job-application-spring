@@ -1,6 +1,8 @@
 package com.mathewzvk.jobms.job.service;
 
 
+import com.mathewzvk.jobms.job.clients.CompanyClient;
+import com.mathewzvk.jobms.job.clients.ReviewClient;
 import com.mathewzvk.jobms.job.dto.JobDto;
 import com.mathewzvk.jobms.job.entity.Job;
 import com.mathewzvk.jobms.job.external.Company;
@@ -29,8 +31,12 @@ public class JobServiceImpl implements JobService{
 
     private final JobRepository jobRepository;
 
+    private final CompanyClient companyClient;
+    private final ReviewClient reviewClient;
+
     @Autowired
     RestTemplate restTemplate;
+
 
     @Override
     public List<JobDto> findAllJobs() {
@@ -40,14 +46,9 @@ public class JobServiceImpl implements JobService{
    }
 
     private JobDto mapToJobWithCompanyDTO(Job job) {
-        Company company = restTemplate.getForObject("http://company-ms:8081/api/companies/" + job.getCompanyId(), Company.class);
+        Company company = companyClient.getCompany(job.getCompanyId());
 
-        ResponseEntity<List<Review>> reviewResponse = restTemplate.exchange("http://review-ms:8083/api/reviews?companyId="+job.getCompanyId(),
-                HttpMethod.GET,
-                null,
-                new ParameterizedTypeReference<List<Review>>() {
-                });
-        List<Review> reviewList = reviewResponse.getBody();
+        List<Review> reviewList = reviewClient.getReviews(job.getCompanyId());
         return JobMapper.jobWithCompanyDTO(job, company, reviewList);
             //throw new NoSuchElementException("No Company related to Job With ID : " + job.getId());
     }

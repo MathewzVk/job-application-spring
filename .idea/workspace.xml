@@ -5,37 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="08300df5-f6e5-499b-bff5-2e7024a2ed70" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/jobms/src/main/java/com/mathewzvk/jobms/job/config/AppConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jobms/src/main/java/com/mathewzvk/jobms/job/external/Review.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jobms/src/main/java/com/mathewzvk/jobms/job/mapper/JobMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service-reg/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service-reg/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service-reg/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service-reg/mvnw" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service-reg/mvnw.cmd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service-reg/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service-reg/src/main/java/com/mathewzvk/servicereg/ServiceRegApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service-reg/src/main/resources/application.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service-reg/src/test/java/com/mathewzvk/servicereg/ServiceRegApplicationTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jobms/src/main/java/com/mathewzvk/jobms/job/clients/CompanyClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jobms/src/main/java/com/mathewzvk/jobms/job/clients/ReviewClient.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/companyms/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/companyms/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/companyms/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/companyms/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/jobms/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/jobms/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jobms/src/main/java/com/mathewzvk/jobms/job/controller/JobController.java" beforeDir="false" afterPath="$PROJECT_DIR$/jobms/src/main/java/com/mathewzvk/jobms/job/controller/JobController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jobms/src/main/java/com/mathewzvk/jobms/job/dto/JobWithCompanyDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/jobms/src/main/java/com/mathewzvk/jobms/job/dto/JobDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jobms/src/main/java/com/mathewzvk/jobms/job/service/JobService.java" beforeDir="false" afterPath="$PROJECT_DIR$/jobms/src/main/java/com/mathewzvk/jobms/job/service/JobService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jobms/src/main/java/com/mathewzvk/jobms/JobmsApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/jobms/src/main/java/com/mathewzvk/jobms/JobmsApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/jobms/src/main/java/com/mathewzvk/jobms/job/service/JobServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/jobms/src/main/java/com/mathewzvk/jobms/job/service/JobServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jobms/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/jobms/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reviewms/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/reviewms/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reviewms/src/main/java/com/mathewzvk/reviewms/review/controller/ReviewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/reviewms/src/main/java/com/mathewzvk/reviewms/review/controller/ReviewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reviewms/src/main/java/com/mathewzvk/reviewms/review/model/ReviewRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/reviewms/src/main/java/com/mathewzvk/reviewms/review/model/ReviewRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reviewms/src/main/java/com/mathewzvk/reviewms/review/model/ReviewResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/reviewms/src/main/java/com/mathewzvk/reviewms/review/model/ReviewResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reviewms/src/main/java/com/mathewzvk/reviewms/review/service/ReviewService.java" beforeDir="false" afterPath="$PROJECT_DIR$/reviewms/src/main/java/com/mathewzvk/reviewms/review/service/ReviewService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reviewms/src/main/java/com/mathewzvk/reviewms/review/service/ReviewServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/reviewms/src/main/java/com/mathewzvk/reviewms/review/service/ReviewServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reviewms/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/reviewms/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,6 +21,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -80,7 +56,7 @@
     "Application.ServiceRegApplication.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "service-disc",
+    "git-widget-placeholder": "feign",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "E:/Java-projects/job-application-spring/service-reg",
     "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings"
@@ -149,10 +125,10 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.CompanymsApplication" />
-        <item itemvalue="Application.ReviewmsApplication" />
-        <item itemvalue="Application.JobmsApplication" />
         <item itemvalue="Application.ServiceRegApplication" />
+        <item itemvalue="Application.JobmsApplication" />
+        <item itemvalue="Application.ReviewmsApplication" />
+        <item itemvalue="Application.CompanymsApplication" />
       </list>
     </recent_temporary>
   </component>
