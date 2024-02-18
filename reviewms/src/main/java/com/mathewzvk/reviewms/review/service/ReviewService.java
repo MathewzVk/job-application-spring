@@ -9,7 +9,7 @@ import com.mathewzvk.reviewms.review.model.ReviewResponse;
 import java.util.List;
 
 public interface ReviewService {
-    List<Review> findAll(Long companyId);
+    List<ReviewResponse> findAll(Long companyId);
 
     String createReview(Long companyId, ReviewRequest reviewRequest);
 

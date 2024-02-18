@@ -1,12 +1,18 @@
 package com.mathewzvk.jobms.job.service;
 
 
-import com.mathewzvk.jobms.job.dto.JobWithCompanyDTO;
+import com.mathewzvk.jobms.job.dto.JobDto;
 import com.mathewzvk.jobms.job.entity.Job;
 import com.mathewzvk.jobms.job.external.Company;
+import com.mathewzvk.jobms.job.external.Review;
+import com.mathewzvk.jobms.job.mapper.JobMapper;
 import com.mathewzvk.jobms.job.model.JobRequest;
 import com.mathewzvk.jobms.job.repository.JobRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.ParameterizedTypeReference;
+import org.springframework.http.HttpMethod;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
@@ -23,24 +29,27 @@ public class JobServiceImpl implements JobService{
 
     private final JobRepository jobRepository;
 
+    @Autowired
+    RestTemplate restTemplate;
+
     @Override
-    public List<JobWithCompanyDTO> findAllJobs() {
+    public List<JobDto> findAllJobs() {
         List<Job> jobList = jobRepository.findAll();
-        List<JobWithCompanyDTO> jobWithCompanyDTOList = new ArrayList<>();
+        List<JobDto> jobDtoList = new ArrayList<>();
         return jobList.stream().map(this::mapToJobWithCompanyDTO).collect(Collectors.toList());
    }
 
-    private JobWithCompanyDTO mapToJobWithCompanyDTO(Job job) {
-        RestTemplate restTemplate = new RestTemplate();
-        Company company = restTemplate.getForObject("http://localhost:8081/api/companies/" + job.getCompanyId(), Company.class);
-        if(company != null) {
-            return JobWithCompanyDTO.builder()
-                    .job(job)
-                    .company(company)
-                    .build();
-        }else {
-            throw new NoSuchElementException("No Company related to Job With ID : " + job.getId());
-        }
+    private JobDto mapToJobWithCompanyDTO(Job job) {
+        Company company = restTemplate.getForObject("http://company-ms:8081/api/companies/" + job.getCompanyId(), Company.class);
+
+        ResponseEntity<List<Review>> reviewResponse = restTemplate.exchange("http://review-ms:8083/api/reviews?companyId="+job.getCompanyId(),
+                HttpMethod.GET,
+                null,
+                new ParameterizedTypeReference<List<Review>>() {
+                });
+        List<Review> reviewList = reviewResponse.getBody();
+        return JobMapper.jobWithCompanyDTO(job, company, reviewList);
+            //throw new NoSuchElementException("No Company related to Job With ID : " + job.getId());
     }
 
     @Override
@@ -57,8 +66,13 @@ public class JobServiceImpl implements JobService{
     }
 
     @Override
-    public Job findJobById(Long id) {
-        return jobRepository.findById(id).orElse(null);
+    public JobDto findJobById(Long id) {
+        Job job = jobRepository.findById(id).orElse(null);
+        if(job != null){
+            return mapToJobWithCompanyDTO(job);
+        }else{
+            throw new NoSuchElementException("No Job with ID : " + id);
+        }
     }
 
     @Override
