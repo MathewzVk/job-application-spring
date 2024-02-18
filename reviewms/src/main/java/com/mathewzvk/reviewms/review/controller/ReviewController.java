@@ -21,7 +21,7 @@ public class ReviewController {
 
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
-    public List<Review> findAll(@RequestParam Long companyId){
+    public List<ReviewResponse> findAll(@RequestParam Long companyId){
         return reviewService.findAll(companyId);
     }
 

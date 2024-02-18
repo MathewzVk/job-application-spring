@@ -9,4 +9,5 @@ public class ReviewRequest {
     private String title;
     private String description;
     private String rating;
+    private Long companyId;
 }

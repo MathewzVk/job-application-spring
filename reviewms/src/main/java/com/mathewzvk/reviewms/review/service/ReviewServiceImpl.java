@@ -1,6 +1,7 @@
 package com.mathewzvk.reviewms.review.service;
 
 
+import ch.qos.logback.core.net.SyslogOutputStream;
 import com.mathewzvk.reviewms.review.entity.Review;
 import com.mathewzvk.reviewms.review.model.ReviewRequest;
 import com.mathewzvk.reviewms.review.model.ReviewResponse;
@@ -11,6 +12,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
@@ -19,8 +21,15 @@ public class ReviewServiceImpl implements ReviewService{
     private final ReviewRepository reviewRepository;
 
     @Override
-    public List<Review> findAll(Long companyId) {
-        return reviewRepository.findByCompanyId(companyId);
+    public List<ReviewResponse> findAll(Long companyId) {
+        List<Review> reviewList = reviewRepository.findByCompanyId(companyId);
+
+        for(Review review: reviewList){
+            System.out.println("Reviews ======= >.." +review.getTitle());
+        }
+
+        return reviewList.stream().map(this::mapToReviewResponse).collect(Collectors.toList());
+
     }
 
     @Override
@@ -82,7 +91,6 @@ public class ReviewServiceImpl implements ReviewService{
                 .title(review.getTitle())
                 .description(review.getDescription())
                 .rating(review.getRating())
-                .companyId(review.getCompanyId())
                 .build();
     }
 }
