@@ -6,6 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="08300df5-f6e5-499b-bff5-2e7024a2ed70" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/companyms/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/companyms/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/companyms/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/companyms/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jobms/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/jobms/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jobms/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/jobms/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reviewms/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/reviewms/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reviewms/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/reviewms/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,6 +27,24 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <excluded-from-favorite>
+      <branch-storage>
+        <map>
+          <entry type="LOCAL">
+            <value>
+              <list>
+                <branch-info repo="$PROJECT_DIR$" source="main" />
+              </list>
+            </value>
+          </entry>
+        </map>
+      </branch-storage>
+    </excluded-from-favorite>
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="zipkin" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="ROOT_SYNC" value="DONT_SYNC" />
   </component>
@@ -51,7 +75,7 @@
     "Application.ServiceRegApplication.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "zipkin",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "E:/Java-projects/job-application-spring/service-reg",
     "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings"
@@ -120,10 +144,10 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.ServiceRegApplication" />
-        <item itemvalue="Application.JobmsApplication" />
         <item itemvalue="Application.ReviewmsApplication" />
         <item itemvalue="Application.CompanymsApplication" />
+        <item itemvalue="Application.JobmsApplication" />
+        <item itemvalue="Application.ServiceRegApplication" />
       </list>
     </recent_temporary>
   </component>
