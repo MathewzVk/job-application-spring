@@ -5,12 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="08300df5-f6e5-499b-bff5-2e7024a2ed70" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/jobms/src/main/java/com/mathewzvk/jobms/job/clients/CompanyClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jobms/src/main/java/com/mathewzvk/jobms/job/clients/ReviewClient.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jobms/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/jobms/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jobms/src/main/java/com/mathewzvk/jobms/JobmsApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/jobms/src/main/java/com/mathewzvk/jobms/JobmsApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jobms/src/main/java/com/mathewzvk/jobms/job/service/JobServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/jobms/src/main/java/com/mathewzvk/jobms/job/service/JobServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,7 +51,7 @@
     "Application.ServiceRegApplication.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "feign",
+    "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "E:/Java-projects/job-application-spring/service-reg",
     "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings"
