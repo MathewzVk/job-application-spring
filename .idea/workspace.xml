@@ -5,21 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="08300df5-f6e5-499b-bff5-2e7024a2ed70" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/config-server/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config-server/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config-server/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config-server/mvnw" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config-server/mvnw.cmd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config-server/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config-server/src/main/java/com/mathewzvk/configserver/ConfigServerApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config-server/src/main/resources/application.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config-server/src/test/java/com/mathewzvk/configserver/ConfigServerApplicationTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-gateway/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-gateway/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-gateway/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-gateway/mvnw" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-gateway/mvnw.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-gateway/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-gateway/src/main/java/com/mathewzvk/apigateway/ApiGatewayApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-gateway/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api-gateway/src/test/java/com/mathewzvk/apigateway/ApiGatewayApplicationTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jobms/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/jobms/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/companyms/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/companyms/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config-server/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/config-server/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/jobms/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/jobms/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reviewms/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/reviewms/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,36 +77,36 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.CompanymsApplication.executor": "Run",
-    "Application.ConfigServerApplication.executor": "Run",
-    "Application.JobmsApplication.executor": "Run",
-    "Application.ReviewmsApplication.executor": "Run",
-    "Application.ServiceRegApplication.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "config-serv",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "E:/Java-projects/job-application-spring/config-server",
-    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.ApiGatewayApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Application.CompanymsApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Application.ConfigServerApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Application.JobmsApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Application.ReviewmsApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Application.ServiceRegApplication.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;gateway&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;E:/Java-projects/job-application-spring/api-gateway&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;
   }
-}]]></component>
+}</component>
   <component name="RunDashboard">
     <option name="configurationTypes">
       <set>
-        <option value="Application" />
         <option value="CompoundRunConfigurationType" />
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Application.ConfigServerApplication">
-    <configuration name="CompanymsApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.mathewzvk.companyms.CompanymsApplication" />
-      <module name="companyms" />
+  <component name="RunManager" selected="Application.CompanymsApplication">
+    <configuration name="ApiGatewayApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.mathewzvk.apigateway.ApiGatewayApplication" />
+      <module name="api-gateway" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.mathewzvk.companyms.*" />
+          <option name="PATTERN" value="com.mathewzvk.apigateway.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -112,12 +114,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ConfigServerApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.mathewzvk.configserver.ConfigServerApplication" />
-      <module name="config-server" />
+    <configuration name="CompanymsApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.mathewzvk.companyms.CompanymsApplication" />
+      <module name="companyms" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.mathewzvk.configserver.*" />
+          <option name="PATTERN" value="com.mathewzvk.companyms.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -164,12 +166,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Application.ApiGatewayApplication" />
+      <item itemvalue="Application.JobmsApplication" />
+      <item itemvalue="Application.CompanymsApplication" />
+      <item itemvalue="Application.ReviewmsApplication" />
+      <item itemvalue="Application.ServiceRegApplication" />
+    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.JobmsApplication" />
-        <item itemvalue="Application.ConfigServerApplication" />
-        <item itemvalue="Application.ReviewmsApplication" />
+        <item itemvalue="Application.ApiGatewayApplication" />
         <item itemvalue="Application.CompanymsApplication" />
+        <item itemvalue="Application.ReviewmsApplication" />
+        <item itemvalue="Application.JobmsApplication" />
         <item itemvalue="Application.ServiceRegApplication" />
       </list>
     </recent_temporary>
