@@ -10,6 +10,9 @@ import com.mathewzvk.jobms.job.external.Review;
 import com.mathewzvk.jobms.job.mapper.JobMapper;
 import com.mathewzvk.jobms.job.model.JobRequest;
 import com.mathewzvk.jobms.job.repository.JobRepository;
+import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
+import io.github.resilience4j.ratelimiter.annotation.RateLimiter;
+import io.github.resilience4j.retry.annotation.Retry;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.ParameterizedTypeReference;
@@ -34,16 +37,29 @@ public class JobServiceImpl implements JobService{
     private final CompanyClient companyClient;
     private final ReviewClient reviewClient;
 
+    //int attempts = 0;
+
     @Autowired
     RestTemplate restTemplate;
 
 
     @Override
+//    @CircuitBreaker(name = "companyBreaker", fallbackMethod = "companyBreakerFallback")
+//    @Retry(name = "companyBreaker", fallbackMethod = "companyBreakerFallback")
+    @RateLimiter(name = "companyBreaker", fallbackMethod = "companyBreakerFallback")
     public List<JobDto> findAllJobs() {
+        //System.out.println("Attempts =======> " + ++attempts);
         List<Job> jobList = jobRepository.findAll();
         List<JobDto> jobDtoList = new ArrayList<>();
         return jobList.stream().map(this::mapToJobWithCompanyDTO).collect(Collectors.toList());
    }
+
+    public List<String> companyBreakerFallback(Exception e){
+        List<String> list = new ArrayList<>();
+        list.add("Dummy");
+        return list;
+    }
+
 
     private JobDto mapToJobWithCompanyDTO(Job job) {
         Company company = companyClient.getCompany(job.getCompanyId());
