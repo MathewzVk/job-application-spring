@@ -4,29 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="08300df5-f6e5-499b-bff5-2e7024a2ed70" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/companyms/src/main/java/com/mathewzvk/companyms/company/clients/ReviewClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/companyms/src/main/java/com/mathewzvk/companyms/company/dto/ReviewMessage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/companyms/src/main/java/com/mathewzvk/companyms/company/messaging/RabbitMQConfiguration.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/companyms/src/main/java/com/mathewzvk/companyms/company/messaging/ReviewMessageConsumer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reviewms/src/main/java/com/mathewzvk/reviewms/review/dto/ReviewMessage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reviewms/src/main/java/com/mathewzvk/reviewms/review/messaging/RabbitMQConfiguration.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reviewms/src/main/java/com/mathewzvk/reviewms/review/messaging/ReviewMessageProducer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/companyms/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/companyms/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/companyms/src/main/java/com/mathewzvk/companyms/CompanymsApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/companyms/src/main/java/com/mathewzvk/companyms/CompanymsApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/companyms/src/main/java/com/mathewzvk/companyms/company/entity/Company.java" beforeDir="false" afterPath="$PROJECT_DIR$/companyms/src/main/java/com/mathewzvk/companyms/company/entity/Company.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/companyms/src/main/java/com/mathewzvk/companyms/company/service/CompanyService.java" beforeDir="false" afterPath="$PROJECT_DIR$/companyms/src/main/java/com/mathewzvk/companyms/company/service/CompanyService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/companyms/src/main/java/com/mathewzvk/companyms/company/service/CompanyServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/companyms/src/main/java/com/mathewzvk/companyms/company/service/CompanyServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/companyms/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/companyms/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reviewms/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/reviewms/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reviewms/src/main/java/com/mathewzvk/reviewms/review/controller/ReviewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/reviewms/src/main/java/com/mathewzvk/reviewms/review/controller/ReviewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reviewms/src/main/java/com/mathewzvk/reviewms/review/entity/Review.java" beforeDir="false" afterPath="$PROJECT_DIR$/reviewms/src/main/java/com/mathewzvk/reviewms/review/entity/Review.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reviewms/src/main/java/com/mathewzvk/reviewms/review/model/ReviewRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/reviewms/src/main/java/com/mathewzvk/reviewms/review/model/ReviewRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reviewms/src/main/java/com/mathewzvk/reviewms/review/model/ReviewResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/reviewms/src/main/java/com/mathewzvk/reviewms/review/model/ReviewResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reviewms/src/main/java/com/mathewzvk/reviewms/review/service/ReviewServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/reviewms/src/main/java/com/mathewzvk/reviewms/review/service/ReviewServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reviewms/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/reviewms/src/main/resources/application.properties" afterDir="false" />
-    </list>
+    <list default="true" id="08300df5-f6e5-499b-bff5-2e7024a2ed70" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
