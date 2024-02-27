@@ -1,12 +1,14 @@
-package com.mathewzvk.reviewms.review.model;
+package com.mathewzvk.reviewms.review.dto;
 
 import lombok.Builder;
 import lombok.Data;
 
 @Data
 @Builder
-public class ReviewRequest {
+public class ReviewMessage {
+    private Long id;
     private String title;
     private String description;
     private Double rating;
+    private Long companyId;
 }

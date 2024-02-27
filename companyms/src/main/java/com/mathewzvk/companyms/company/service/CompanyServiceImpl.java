@@ -1,6 +1,9 @@
 package com.mathewzvk.companyms.company.service;
 
 
+import ch.qos.logback.core.net.SyslogOutputStream;
+import com.mathewzvk.companyms.company.clients.ReviewClient;
+import com.mathewzvk.companyms.company.dto.ReviewMessage;
 import com.mathewzvk.companyms.company.entity.Company;
 import com.mathewzvk.companyms.company.model.CompanyRequest;
 import com.mathewzvk.companyms.company.model.CompanyResponse;
@@ -17,6 +20,7 @@ import java.util.Optional;
 public class CompanyServiceImpl implements CompanyService{
 
     private final CompanyRepository companyRepository;
+    private final ReviewClient reviewClient;
 
     @Override
     public List<Company> findAll() {
@@ -68,6 +72,16 @@ public class CompanyServiceImpl implements CompanyService{
         }else {
             throw new NoSuchElementException("Company with ID " + id + " not found");
         }
+    }
+
+    @Override
+    public void updateCompanyRating(ReviewMessage reviewMessage) {
+        System.out.println("Rating ========> " + reviewMessage.getRating());
+        Company company = companyRepository.findById(reviewMessage.getCompanyId())
+                .orElseThrow(() -> new NoSuchElementException("No Company with ID : " + reviewMessage.getCompanyId()));
+        double avgRating = reviewClient.getAverageRating(company.getId());
+        company.setRating(avgRating);
+        companyRepository.save(company);
     }
 
     private CompanyResponse mapToCompanyResponse(Company company) {

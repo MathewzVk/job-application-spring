@@ -3,6 +3,7 @@ package com.mathewzvk.reviewms.review.service;
 
 import ch.qos.logback.core.net.SyslogOutputStream;
 import com.mathewzvk.reviewms.review.entity.Review;
+import com.mathewzvk.reviewms.review.messaging.ReviewMessageProducer;
 import com.mathewzvk.reviewms.review.model.ReviewRequest;
 import com.mathewzvk.reviewms.review.model.ReviewResponse;
 import com.mathewzvk.reviewms.review.repository.ReviewRepository;
@@ -19,6 +20,8 @@ import java.util.stream.Collectors;
 public class ReviewServiceImpl implements ReviewService{
 
     private final ReviewRepository reviewRepository;
+
+    private final ReviewMessageProducer reviewMessageProducer;
 
     @Override
     public List<ReviewResponse> findAll(Long companyId) {
@@ -41,7 +44,9 @@ public class ReviewServiceImpl implements ReviewService{
                 .companyId(companyId)
                 .build();
         if(companyId != null){
+
             reviewRepository.save(review);
+            reviewMessageProducer.sendMessage(review);
             return "review added successfully";
         }else {
             throw new NoSuchElementException("No Company with ID " + companyId);

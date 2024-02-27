@@ -25,5 +25,6 @@ public class Company {
 
     private String description;
 
+    private Double rating;
 
 }

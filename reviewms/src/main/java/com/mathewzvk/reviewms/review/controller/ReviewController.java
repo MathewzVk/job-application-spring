@@ -3,6 +3,7 @@ package com.mathewzvk.reviewms.review.controller;
 
 
 import com.mathewzvk.reviewms.review.entity.Review;
+import com.mathewzvk.reviewms.review.messaging.ReviewMessageProducer;
 import com.mathewzvk.reviewms.review.model.ReviewRequest;
 import com.mathewzvk.reviewms.review.model.ReviewResponse;
 import com.mathewzvk.reviewms.review.service.ReviewService;
@@ -18,6 +19,7 @@ import java.util.List;
 public class ReviewController {
 
     private final ReviewService reviewService;
+
 
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
@@ -49,4 +51,12 @@ public class ReviewController {
         return reviewService.delete(reviewId);
     }
 
+    @GetMapping("/averageRating")
+    @ResponseStatus(HttpStatus.OK)
+    public Double averageRating(@RequestParam Long companyId){
+        System.out.println("<============= From averageRating() function =========> ");
+        List<ReviewResponse> responseList = reviewService.findAll(companyId);
+        return responseList.stream().mapToDouble(ReviewResponse::getRating).average()
+                .orElse(0.0);
+    }
 }
