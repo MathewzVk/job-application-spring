@@ -54,7 +54,6 @@ public class ReviewController {
     @GetMapping("/averageRating")
     @ResponseStatus(HttpStatus.OK)
     public Double averageRating(@RequestParam Long companyId){
-        System.out.println("<============= From averageRating() function =========> ");
         List<ReviewResponse> responseList = reviewService.findAll(companyId);
         return responseList.stream().mapToDouble(ReviewResponse::getRating).average()
                 .orElse(0.0);

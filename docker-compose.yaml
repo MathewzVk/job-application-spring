@@ -1,0 +1,131 @@
+version: "3.7"
+services:
+  mysql:
+    container_name: mysql
+    image: mysql
+    environment:
+      - MYSQL_DATABASE=job_comany_ms
+      - MYSQL_USER=root
+      - MYSQL_PASSWORD=root
+      - MYSQL_ROOT_PASSWORD=root
+    volumes:
+      - my-db:/var/lib/mysql
+    ports:
+      - '3306:3306'
+    networks:
+      - mysql
+    restart: always
+
+  config-server-ms:
+    image: mathewzvk/config-sever-ms:latest
+    container_name: configserver
+    ports:
+      - 8080:8080
+    depends_on:
+      - servicereg
+    networks:
+      - microservice-network
+      - mysql
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+
+  servicereg:
+    image: mathewzvk/servicereg:latest
+    container_name: servicereg
+    ports:
+      - '8761:8761'
+    depends_on:
+      - rabbitmq
+      - zipkin
+      - mysql
+    networks:
+      - microservice-network
+      - mysql
+
+  company-ms:
+    image: mathewzvk/company-ms:latest
+    container_name: company
+    ports:
+      - '8081:8081'
+    depends_on:
+      - servicereg
+      - config-server-ms
+    networks:
+      - microservice-network
+      - mysql
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+
+  job-ms:
+    image: mathewzvk/job-ms:latest
+    container_name: job
+    ports:
+      - '8082:8082'
+    depends_on:
+      - servicereg
+      - config-server-ms
+    networks:
+      - microservice-network
+      - mysql
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://servicereg:8761/eureka
+
+  review-ms:
+    image: mathewzvk/review-ms:latest
+    container_name: review
+    ports:
+      - '8083:8083'
+    depends_on:
+      - servicereg
+      - config-server-ms
+    networks:
+      - microservice-network
+      - mysql
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+
+  rabbitmq:
+    image: rabbitmq:3-management
+    container_name: rabbitmq
+    ports:
+      - '5672:5672'
+      - '15672:15672'
+    networks:
+      - microservice-network
+      - mysql
+
+  zipkin:
+    image: openzipkin/zipkin
+    container_name: zipkin
+    ports:
+      - '9411:9411'
+    networks:
+      - microservice-network
+      - mysql
+
+  api-gateway-ms:
+    image: mathewzvk/api-gateway:latest
+    container_name: gateway
+    ports:
+      - '8084:8084'
+    depends_on:
+      - servicereg
+    networks:
+      - microservice-network
+      - mysql
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+
+networks:
+  microservice-network:
+    driver: bridge
+  mysql:
+    driver: bridge
+
+volumes:
+  my-db:
+
+
+
+

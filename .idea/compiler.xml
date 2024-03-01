@@ -7,12 +7,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="api-gateway" />
         <module name="reviewms" />
+        <module name="companyms" />
         <module name="service-reg" />
         <module name="config-server" />
-        <module name="api-gateway" />
-        <module name="firstjobapp" />
-        <module name="companyms" />
         <module name="jobms" />
       </profile>
     </annotationProcessing>
@@ -22,7 +21,6 @@
       <module name="api-gateway" options="-parameters" />
       <module name="companyms" options="-parameters" />
       <module name="config-server" options="-parameters" />
-      <module name="firstjobapp" options="-parameters" />
       <module name="jobms" options="-parameters" />
       <module name="reviewms" options="-parameters" />
       <module name="service-reg" options="-parameters" />

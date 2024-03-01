@@ -76,7 +76,6 @@ public class CompanyServiceImpl implements CompanyService{
 
     @Override
     public void updateCompanyRating(ReviewMessage reviewMessage) {
-        System.out.println("Rating ========> " + reviewMessage.getRating());
         Company company = companyRepository.findById(reviewMessage.getCompanyId())
                 .orElseThrow(() -> new NoSuchElementException("No Company with ID : " + reviewMessage.getCompanyId()));
         double avgRating = reviewClient.getAverageRating(company.getId());

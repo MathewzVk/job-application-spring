@@ -27,10 +27,6 @@ public class ReviewServiceImpl implements ReviewService{
     public List<ReviewResponse> findAll(Long companyId) {
         List<Review> reviewList = reviewRepository.findByCompanyId(companyId);
 
-        for(Review review: reviewList){
-            System.out.println("Reviews ======= >.." +review.getTitle());
-        }
-
         return reviewList.stream().map(this::mapToReviewResponse).collect(Collectors.toList());
 
     }
